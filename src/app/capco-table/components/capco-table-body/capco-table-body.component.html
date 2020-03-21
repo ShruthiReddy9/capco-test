@@ -1,0 +1,7 @@
+<tbody class="capco-table">
+    <tr *ngFor="let row of visibleRows">
+        <td *ngFor="let column of columns" [attr.width]="column.width">
+            <span [attr.title]="row[column.key]">{{ row[column.key]}}</span>
+        </td>
+    </tr>
+</tbody>
