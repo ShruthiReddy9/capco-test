@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CapcoTableBodyComponent } from './capco-table-body.component';
@@ -8,7 +9,8 @@ describe('CapcoTableBodyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CapcoTableBodyComponent ]
+      declarations: [ CapcoTableBodyComponent ],
+      imports: [HttpClientTestingModule]
     })
     .compileComponents();
   }));

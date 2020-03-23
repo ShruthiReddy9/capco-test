@@ -49,11 +49,11 @@ export class CapcoTableComponent implements OnInit, AfterContentInit {
   }
 
   onPageChange(event) {
-      this.rowsPerPage = Number(event.limit)
+      this.rowsPerPage = Number(event.limit);
       this.pageNo = Number(event.page);
       this.visiableRows = this.rows.slice(this.pageNo * this.rowsPerPage, (this.pageNo * this.rowsPerPage) + this.rowsPerPage);
   }
-  calculatetableWidth(){
+  calculatetableWidth() {
     this.tableWidth = 0;
     const tableWidth = this.headerColumns.reduce((a, b) => {
       return Number(a) + Number(b.width);

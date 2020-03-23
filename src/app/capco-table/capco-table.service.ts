@@ -13,7 +13,7 @@ export class CapcoTableService {
                 width: c.width || 150,
             };
         });
-        this.columns.push({ key: 'button', name: 'Action', width: 150 });
+        this.columns.push({ key: 'button', name: 'Action', width: 100 });
         return this.columns;
     }
 }

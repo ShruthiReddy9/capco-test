@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { CapcoTableFooterComponent } from './capco-table-footer.component';
 
@@ -12,7 +13,8 @@ describe('CapcoTableFooterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CapcoTableFooterComponent ]
+      declarations: [ CapcoTableFooterComponent ],
+      imports: [FormsModule]
     })
     .compileComponents();
   }));
