@@ -27,10 +27,6 @@ export class AppComponent implements OnInit {
       label: 'Phone Number',
     },
     {
-      key: 'address_1',
-      label: 'Address',
-    },
-    {
       key: 'city',
       label: 'City Name',
     },
