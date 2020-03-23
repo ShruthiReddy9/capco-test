@@ -16,6 +16,7 @@ export class CapcoTableComponent implements OnInit, AfterContentInit {
   parentHeight: number;
   private _columns: Array<any>;
   private _rows: Array<any>;
+  tableWidth = 0;
   @Input('columns')
   public get columns(): Array<any> {
     return this._columns;
@@ -23,6 +24,7 @@ export class CapcoTableComponent implements OnInit, AfterContentInit {
   public set columns(value: Array<any>) {
     this._columns = value;
     this.headerColumns = value ? this.capcoTableService.setColumns(value) : [];
+    this.calculatetableWidth();
   }
   @Input('rows')
   public get rows(): Array<any> {
@@ -50,5 +52,12 @@ export class CapcoTableComponent implements OnInit, AfterContentInit {
       this.rowsPerPage = Number(event.limit)
       this.pageNo = Number(event.page);
       this.visiableRows = this.rows.slice(this.pageNo * this.rowsPerPage, (this.pageNo * this.rowsPerPage) + this.rowsPerPage);
+  }
+  calculatetableWidth(){
+    this.tableWidth = 0;
+    const tableWidth = this.headerColumns.reduce((a, b) => {
+      return Number(a) + Number(b.width);
+  }, 0);
+  this.tableWidth = tableWidth + 25;
   }
 }
