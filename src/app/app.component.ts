@@ -27,8 +27,24 @@ export class AppComponent implements OnInit {
       label: 'Phone Number',
     },
     {
-      key: 'pan',
-      label: 'Pan Number',
+      key: 'address_1',
+      label: 'Address',
+    },
+    {
+      key: 'city',
+      label: 'City Name',
+    },
+    {
+      key: 'zip',
+      label: 'Zip Number',
+    },
+    {
+      key: 'fee',
+      label: 'Fee Amount',
+    },
+    {
+      key: 'url',
+      label: 'Company Url',
     }
   ];
   constructor(private http: HttpClient){}

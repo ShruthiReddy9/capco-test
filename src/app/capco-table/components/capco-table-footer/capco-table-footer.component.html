@@ -1,0 +1,27 @@
+<div class="pagination-container" *ngIf="rowsPerPage > 0 && rowsPerPage < totalCount">
+    <ul class="">
+        <li class="page-first" (click)="previous(true)" [ngClass]="{'disabled':currentIndex == 0}">
+            <a>
+                <<</a>
+        </li>
+        <li class="page-previous" (click)="previous()" [ngClass]="{'disabled':currentIndex == 0}">
+            <a>
+                <</a>
+        </li>
+        <li class="page-shift" (click)="shiftLeft()" *ngIf="hasLeftShift()">
+            <a>...</a>
+        </li>
+        <li class="page-item" [ngClass]="{'active': page == currentPage, 'hidden': hideButton(i) }" *ngFor="let page of pages | slice:0:(pageStartsAt+numberOfSelectablePagesInPaginator); let i=index;" (click)="pageSelect(page, i, true)">
+            <a>{{page}}</a>
+        </li>
+        <li class="page-shift" (click)="shiftRight()" *ngIf="hasRightShift()">
+            <a>...</a>
+        </li>
+        <li class="page-next" (click)="next()" [ngClass]="{'disabled':currentIndex == (pages.length - 1) }">
+            <a>></a>
+        </li>
+        <li class="page-last" (click)="next(true)" [ngClass]="{'disabled':currentIndex == (pages.length - 1) }">
+            <a>>></a>
+        </li>
+    </ul>
+</div>

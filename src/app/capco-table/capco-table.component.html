@@ -1,6 +1,7 @@
 <div class="capco-table-section">
-    <table class="capco-table">
+    <div class="capco-table" [style.height]="parentHeight + 'px'">
         <capco-table-header [columns]="headerColumns"></capco-table-header>
-        <capco-table-body [rows]="rows" [columns]="headerColumns"></capco-table-body>
-    </table>
+        <capco-table-body [rows]="visiableRows" [columns]="headerColumns" [style.height]="bodyHeight + 'px'"></capco-table-body>
+        <capco-table-footer [rowsPerPage]="rowsPerPage" [totalCount]="totalCount" (onPageChange)="onPageChange($event)"></capco-table-footer>
+    </div>
 </div>

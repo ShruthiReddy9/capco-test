@@ -9,7 +9,7 @@ export class CapcoTableService {
             return {
                 key: c.key,
                 label: c.label,
-                width: c.width || 150,
+                width: c.width || 250,
             };
         });
         return this.columns;

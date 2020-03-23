@@ -7,6 +7,7 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 })
 export class CapcoTableHeaderComponent implements OnInit, OnChanges {
   @Input() columns: any = [];
+  @Input() headerHeight = 50;
   constructor() { }
 
   ngOnInit() {

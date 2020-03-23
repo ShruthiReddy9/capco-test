@@ -1,0 +1,12 @@
+.capco-table-header {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #babfc7;
+    .capco-header-row {
+        display: flex;
+        line-height: 42px;
+        .capco-header-cell {
+            padding: 7px;
+            white-space: nowrap;
+        }
+    }
+}

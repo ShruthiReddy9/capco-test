@@ -1,0 +1,20 @@
+.capco-table-body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: auto;
+    .capco-table-body-row {
+        display: flex;
+        height: 30px;
+        background-color: #fff;
+        color: #181d1f;
+        border: 1px #dde2eb;
+        line-height: 23px;
+        .capco-table-body-cell {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 5px 10px;
+        }
+    }
+}

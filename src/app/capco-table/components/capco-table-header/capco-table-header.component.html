@@ -1,7 +1,7 @@
-<thead class="capco-table-header">
-    <tr>
-        <th *ngFor="let column of columns" [attr.width]="column.width">
-            <div>{{column.label}}</div>
-        </th>
-    </tr>
-</thead>
+<div class="capco-table-header" [style.height.px]="headerHeight">
+    <div class="capco-header-row">
+        <div *ngFor="let column of columns" [style.width.px]="column.width" class="capco-header-cell">
+            <span>{{column.label}}</span>
+        </div>
+    </div>
+</div>

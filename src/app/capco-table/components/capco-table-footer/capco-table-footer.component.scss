@@ -1,0 +1,106 @@
+.pagination-container {
+    float: right;
+    height: 50px;
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+        padding: 10px 15px;
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            margin: 0 10px 0 0;
+            float: left;
+            cursor: pointer;
+            &:last-child {
+                margin: 0;
+            }
+            &:not(.page-shift),
+            &:not(.page-item) {
+                a {
+                    display: block;
+                    font-size: 12px;
+                }
+            }
+            &.page {
+                &-first {
+                    padding-right: 10px;
+                }
+                &-previous {
+                    padding-right: 10px;
+                }
+                &-next {
+                    padding-left: 10px;
+                }
+                &-last {
+                    padding-left: 10px;
+                }
+                &-item {
+                    padding-left: 4px;
+                    padding-right: 4px;
+                    a {
+                        font-size: 12px;
+                        line-height: 1;
+                        display: block;
+                        width: auto;
+                        height: auto;
+                    }
+                    &.active {
+                        border-bottom: solid 3px #7887e6;
+                        a {
+                            font-weight: 600;
+                        }
+                    }
+                    &.hidden {
+                        display: none !important;
+                    }
+                }
+                &-shift {
+                    a {
+                        font-size: 12;
+                        line-height: 1;
+                        &:hover {
+                            color: #7887e6;
+                        }
+                    }
+                }
+                &-count {
+                    margin-left: 10px;
+                    margin-top: -7px;
+                    span {
+                        font-size: 12px;
+                        color: #6c6c6c;
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-right: 5px;
+                    }
+                    select {
+                        border: 0;
+                        border-bottom: solid 1px #cccccc;
+                        padding: 0 12px 0 0 !important;
+                        width: auto !important;
+                        height: auto !important;
+                        display: inline-block;
+                        vertical-align: middle;
+                        background-position: center right;
+                        font-size: 12px;
+                        font-weight: 600;
+                        &::-ms-expand {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            &.disabled {
+                cursor: inherit;
+                opacity: 0.5;
+                &:hover {
+                    z-index: 0;
+                }
+            }
+        }
+    }
+}

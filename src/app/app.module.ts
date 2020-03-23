@@ -7,6 +7,7 @@ import { CapcoTableComponent } from './capco-table/capco-table.component';
 import { CapcoTableService } from './capco-table/capco-table.service';
 import { CapcoTableHeaderComponent } from './capco-table/components/capco-table-header/capco-table-header.component';
 import { CapcoTableBodyComponent } from './capco-table/components/capco-table-body/capco-table-body.component';
+import { CapcoTableFooterComponent } from './capco-table/components/capco-table-footer/capco-table-footer.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { CapcoTableBodyComponent } from './capco-table/components/capco-table-bo
     AppComponent,
     CapcoTableComponent,
     CapcoTableHeaderComponent,
-    CapcoTableBodyComponent
+    CapcoTableBodyComponent,
+    CapcoTableFooterComponent
   ],
   imports: [
     BrowserModule,
