@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
@@ -9,12 +10,19 @@ export class CapcoTableBodyComponent implements OnInit, OnChanges {
   @Input() rows: Array<any> = [];
   @Input() columns: any = [];
   visibleRows: any = [];
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
   }
   ngOnChanges(changes: SimpleChanges) {
     this.visibleRows = this.rows ? this.rows.slice() : [];
+  }
+
+  submit(row, column) {
+    this.http.post(`/${row.guid}`, {}).subscribe((res: any) => {
+    }, err => {
+      alert(`${row.guid} submitted`);
+    });
   }
 
 }

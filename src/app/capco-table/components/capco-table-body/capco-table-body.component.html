@@ -1,7 +1,11 @@
 <div class="capco-table-body">
     <div *ngFor="let row of visibleRows" class="capco-table-body-row">
-        <div *ngFor="let column of columns" [style.width.px]="column.width" class="capco-table-body-cell">
-            <span [attr.title]="row[column.key]">{{ row[column.key]}}</span>
+        <div *ngFor="let column of columns; let i = index" [style.width.px]="column.width" class="capco-table-body-cell">
+            <label class="container" *ngIf="i == 0">
+                <input type="checkbox" [checked]="row.isSelected">
+              </label>
+            <span *ngIf="column.key !=='button'" [attr.title]="row[column.key]">{{ row[column.key]}}</span>
+            <button *ngIf="column.key =='button'" (click)="submit(row, column)"> Subbmit </button>
         </div>
     </div>
 </div>
