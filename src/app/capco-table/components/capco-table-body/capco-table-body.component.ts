@@ -8,7 +8,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 export class CapcoTableBodyComponent implements OnInit, OnChanges {
   @Input() rows: Array<any> = [];
   @Input() columns: any = [];
-  visibleRows: any = []
+  visibleRows: any = [];
   constructor() { }
 
   ngOnInit() {

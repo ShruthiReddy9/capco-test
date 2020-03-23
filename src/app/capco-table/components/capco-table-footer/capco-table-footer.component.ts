@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 
 class OnPageChangeEventRequest {
   offset = 0;
@@ -12,13 +12,12 @@ class OnPageChangeEventRequest {
   styleUrls: ['./capco-table-footer.component.scss']
 })
 
-export class CapcoTableFooterComponent implements OnInit {
+export class CapcoTableFooterComponent implements OnInit, OnChanges {
   @Input()
   totalCount: any;
   @Input()
   rowsPerPage: any;
-  @Output()
-  onPageChange: EventEmitter<OnPageChangeEventRequest> = new EventEmitter<OnPageChangeEventRequest>();
+  @Output() change: EventEmitter<OnPageChangeEventRequest> = new EventEmitter<OnPageChangeEventRequest>();
   pageStartsAt = 0;
   currentIndex = 0;
   numberOfPages = 0;
@@ -70,7 +69,7 @@ export class CapcoTableFooterComponent implements OnInit {
     this.onPageChangeEventRequest.limit = this.rowsPerPage;
     this.onPageChangeEventRequest.offset = this.currentIndex * this.rowsPerPage;
     this.onPageChangeEventRequest.page = page - 1;
-    this.onPageChange.emit(this.onPageChangeEventRequest);
+    this.change.emit(this.onPageChangeEventRequest);
   }
 
 

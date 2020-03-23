@@ -47,17 +47,17 @@ export class AppComponent implements OnInit {
       label: 'Company Url',
     }
   ];
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient) {}
 
-  ngOnInit(){
+  ngOnInit() {
 this.getData();
   }
 
-  getData(){
-    this.http.get('../assets/sample_data.json').subscribe((res:any) => {
+  getData() {
+    this.http.get('../assets/sample_data.json').subscribe((res: any) => {
       this.rowData = res;
     }, err => {
       this.rowData = [];
-    })
+    });
   }
 }

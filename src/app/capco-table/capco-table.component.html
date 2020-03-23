@@ -2,6 +2,6 @@
     <div class="capco-table" [style.height.px]="parentHeight">
         <capco-table-header [columns]="headerColumns"></capco-table-header>
         <capco-table-body [rows]="visiableRows" [columns]="headerColumns" [style.height.px]="bodyHeight"></capco-table-body>
-        <capco-table-footer [rowsPerPage]="rowsPerPage" [totalCount]="totalCount" (onPageChange)="onPageChange($event)" *ngIf="showFooter"></capco-table-footer>
+        <capco-table-footer [rowsPerPage]="rowsPerPage" [totalCount]="totalCount" (change)="onPageChange($event)" *ngIf="showFooter"></capco-table-footer>
     </div>
 </div>

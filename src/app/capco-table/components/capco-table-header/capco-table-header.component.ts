@@ -14,7 +14,7 @@ export class CapcoTableHeaderComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    
+
   }
 
 }
