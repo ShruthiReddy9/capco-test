@@ -8,7 +8,6 @@ import { CapcoTableService } from './capco-table.service';
 })
 export class CapcoTableComponent implements OnInit, AfterContentInit {
   headerColumns: any = [];
-  rowsPerPage = 50;
   totalCount = 0;
   bodyHeight: number;
   footerHeight = 50;
@@ -36,6 +35,7 @@ export class CapcoTableComponent implements OnInit, AfterContentInit {
   }
   @Input() showFooter: boolean;
   @Input() headerHeight = 50;
+  @Input() rowsPerPage = 50;
   constructor(private el: ElementRef, private capcoTableService: CapcoTableService) { }
 
   ngOnInit() {
