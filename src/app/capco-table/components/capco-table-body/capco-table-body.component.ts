@@ -11,7 +11,7 @@ export class CapcoTableBodyComponent implements OnInit, OnChanges {
   @Input() rows: Array<any> = [];
   @Input() columns: any = [];
   visibleRows: any = [];
-  constructor(private http: HttpClient, private capcoTableService: CapcoTableService) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
   }

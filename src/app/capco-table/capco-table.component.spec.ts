@@ -1,5 +1,6 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { CapcoTableComponent } from './capco-table.component';
 import { CapcoTableService } from './capco-table.service';
@@ -14,6 +15,7 @@ describe('CapcoTableComponent', () => {
     TestBed.configureTestingModule({
       declarations: [CapcoTableComponent],
       providers: [{ provide: CapcoTableService, useValue: capcoTableServiceStub }],
+      imports : [FormsModule],
       schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();

@@ -1,5 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CapcoTableComponent } from './capco-table/capco-table.component';
@@ -20,7 +21,7 @@ describe('AppComponent', () => {
         CapcoTableBodyComponent, CapcoTableFooterComponent, CapcoTableComponent
       ],
       providers: [{ provide: CapcoTableService, useValue: capcoTableServiceStub }],
-      imports: [HttpClientTestingModule]
+      imports: [HttpClientTestingModule, FormsModule]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
