@@ -11,7 +11,7 @@ export class CapcoTableComponent implements OnInit, AfterContentInit {
   rowsPerPage = 50;
   totalCount = 0;
   bodyHeight: number;
-  footerHeight = 60;
+  footerHeight = 50;
   visiableRows = [];
   pageNo: number;
   parentHeight: number;

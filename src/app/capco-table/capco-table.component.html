@@ -1,7 +1,7 @@
 <div class="capco-table-section">
-    <div class="capco-table" [style.height]="parentHeight + 'px'">
+    <div class="capco-table" [style.height.px]="parentHeight">
         <capco-table-header [columns]="headerColumns"></capco-table-header>
-        <capco-table-body [rows]="visiableRows" [columns]="headerColumns" [style.height]="bodyHeight + 'px'"></capco-table-body>
-        <capco-table-footer [rowsPerPage]="rowsPerPage" [totalCount]="totalCount" (onPageChange)="onPageChange($event)"></capco-table-footer>
+        <capco-table-body [rows]="visiableRows" [columns]="headerColumns" [style.height.px]="bodyHeight"></capco-table-body>
+        <capco-table-footer [rowsPerPage]="rowsPerPage" [totalCount]="totalCount" (onPageChange)="onPageChange($event)" *ngIf="showFooter"></capco-table-footer>
     </div>
 </div>
