@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { CapcoTableService } from '../../capco-table.service';
 
 @Component({
   selector: 'capco-table-body',
@@ -10,7 +11,7 @@ export class CapcoTableBodyComponent implements OnInit, OnChanges {
   @Input() rows: Array<any> = [];
   @Input() columns: any = [];
   visibleRows: any = [];
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private capcoTableService: CapcoTableService) { }
 
   ngOnInit() {
   }

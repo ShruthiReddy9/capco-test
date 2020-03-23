@@ -47,9 +47,8 @@ export class CapcoTableComponent implements OnInit, AfterContentInit {
   }
 
   onPageChange(event) {
-    if (this.pageNo !== event.page) {
+      this.rowsPerPage = Number(event.limit)
       this.pageNo = Number(event.page);
       this.visiableRows = this.rows.slice(this.pageNo * this.rowsPerPage, (this.pageNo * this.rowsPerPage) + this.rowsPerPage);
-    }
   }
 }

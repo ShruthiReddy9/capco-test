@@ -17,7 +17,7 @@ export class CapcoTableFooterComponent implements OnInit, OnChanges {
   totalCount: any;
   @Input()
   rowsPerPage: any;
-  @Output() change: EventEmitter<OnPageChangeEventRequest> = new EventEmitter<OnPageChangeEventRequest>();
+  @Output() pagechange: EventEmitter<OnPageChangeEventRequest> = new EventEmitter<OnPageChangeEventRequest>();
   pageStartsAt = 0;
   currentIndex = 0;
   numberOfPages = 0;
@@ -59,17 +59,19 @@ export class CapcoTableFooterComponent implements OnInit, OnChanges {
     this.pageStartsAt = 0;
   }
 
+  updateRowsPerPage() {
+    this.onPageChangeEventRequest.limit = this.rowsPerPage;
+    this.onPageChangeEventRequest.offset = this.currentIndex * this.rowsPerPage;
+    this.pagechange.emit(this.onPageChangeEventRequest);
+  }
 
-  /**
-   * @description A Listener for page button click event.
-   */
   pageSelect(page: number, index: number, direct?: boolean) {
     this.currentPage = page;
     this.currentIndex = index;
     this.onPageChangeEventRequest.limit = this.rowsPerPage;
     this.onPageChangeEventRequest.offset = this.currentIndex * this.rowsPerPage;
     this.onPageChangeEventRequest.page = page - 1;
-    this.change.emit(this.onPageChangeEventRequest);
+    this.pagechange.emit(this.onPageChangeEventRequest);
   }
 
 

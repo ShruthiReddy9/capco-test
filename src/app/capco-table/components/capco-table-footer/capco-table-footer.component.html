@@ -23,5 +23,15 @@
         <li class="page-last" (click)="next(true)" [ngClass]="{'disabled':currentIndex == (pages.length - 1) }">
             <a>>></a>
         </li>
+        <li class="page-count">
+            <span>Show</span>
+            <select class="form-control" name="paginationSelector" [(ngModel)]="rowsPerPage" (change)="updateRowsPerPage()">
+                <!-- <option value="5">5</option> -->
+                <option value="10">10</option>
+                <option value="25" *ngIf="totalCount>25">25</option>
+                <option value="50" *ngIf="totalCount>50">50</option>
+                <!-- <option value="100" *ngIf="totalCount>100">100</option> -->
+            </select>
+        </li>
     </ul>
 </div>
