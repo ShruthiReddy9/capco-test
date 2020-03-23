@@ -20,9 +20,9 @@ export class CapcoTableBodyComponent implements OnInit, OnChanges {
   }
 
   submit(row, column) {
-    this.http.post(`/${row.guid}`, {}).subscribe((res: any) => {
+    this.http.post(`/api/submit/${row.id}`, {Id: row.id, status: row.status }).subscribe((res: any) => {
     }, err => {
-      alert(`${row.guid} submitted`);
+      alert(`${row.id} submitted`);
     });
   }
 
